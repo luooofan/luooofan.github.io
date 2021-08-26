@@ -1,483 +1,183 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luooofan.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="luooofan&#39;s blog">
-<meta property="og:url" content="https://luooofan.github.io/index.html">
-<meta property="og:site_name" content="luooofan&#39;s blog">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>luooofan - Welcome to luooofan's blog.</title><meta name="author" content="luooofan,luooofan@gmail.com"><meta name="copyright" content="luooofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="luooofan&#39;s blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="luooofan">
+<meta property="og:url" content="https://luooofan.site/index.html">
+<meta property="og:site_name" content="luooofan">
+<meta property="og:description" content="luooofan&#39;s blog">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="luooofan">
 <meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://luooofan.github.io/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>luooofan's blog</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://luooofan.site/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: luooofan","link":"链接: ","source":"来源: luooofan","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'luooofan',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-08-26 23:13:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-</head>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">luooofan's blog</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
-            
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://luooofan.github.io/2021/08/23/Typora%E9%85%8D%E7%BD%AE%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%9B%BE%E5%BA%8A/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="luooofan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="luooofan's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/23/Typora%E9%85%8D%E7%BD%AE%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%9B%BE%E5%BA%8A/" class="post-title-link" itemprop="url">Typora配置上传脚本使用七牛云图床</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-08-23 14:26:23 / 修改时间：14:36:43" itemprop="dateCreated datePublished" datetime="2021-08-23T14:26:23+08:00">2021-08-23</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Typora配置上传脚本使用七牛云图床"><a href="#Typora配置上传脚本使用七牛云图床" class="headerlink" title="Typora配置上传脚本使用七牛云图床"></a>Typora配置上传脚本使用七牛云图床</h1><p>[TOC]</p>
-<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>利用Typora提供的上传图片功能，编写shell脚本，调用七牛云提供的**<a target="_blank" rel="noopener" href="https://github.com/qiniu/qshell">qshell</a>**命令行工具，在windows环境下通过wsl2运行，将markdown文档中的本地或网络图片选择性地上传到七牛云图床。</p>
-<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><h3 id="Typora-Version"><a href="#Typora-Version" class="headerlink" title="Typora Version"></a>Typora Version</h3><blockquote>
-<p>​    In newer version of Typora (≥ <strong>0.9.9.32</strong> on macOS or <strong>0.9.84</strong> on Windows / Linux), we added a “<strong>upload image</strong>” function to upload images to a cloud image storage via 3rd apps or scripts.               ——<a target="_blank" rel="noopener" href="https://support.typora.io/Upload-Image/">official documentation</a></p>
-</blockquote>
-<h3 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a><a target="_blank" rel="noopener" href="https://www.qiniu.com/">七牛云</a></h3><ul>
-<li>注册登录</li>
-<li>控制台➡对象存储Kodo➡空间管理➡新建空间，要求名字唯一，访问控制设置为public</li>
-<li>配置CDN加速域名，要求必须有一个备过案的域名<ul>
-<li>可以直接绑定原域名，也可以绑定其二级域名</li>
-<li>根据个人情况选择。我选择绑定了原域名的二级域名<strong>img.source_domain</strong></li>
-<li>绑定后需要到域名控制台配置CNAME解析</li>
-</ul>
-</li>
-<li>下载<a target="_blank" rel="noopener" href="https://github.com/qiniu/qshell">qshell</a>命令行工具，配置环境变量，下面几个命令的具体使用参考文档<ul>
-<li>配置账户：<code>qshell account &lt;Your AccessKey&gt; &lt;Your SecretKey&gt; &lt;Your Name&gt;</code></li>
-<li>分片上传文件：<code>qshell rput &lt;Bucket&gt; &lt;Key&gt; &lt;LocalFile&gt;</code> </li>
-<li>抓取并存储：<code>qshell fetch &lt;RemoteResourceUrl&gt; &lt;Bucket&gt; [-k &lt;Key&gt;] </code></li>
-<li>下载文件：<code>qshell get &lt;Bucket&gt; &lt;Key&gt; [-o &lt;OutFile&gt;]</code></li>
-<li>查询信息：<code>qshell buckets</code> <code>qshell domains &lt;Bucket&gt;</code> <code>qshell listbucket &lt;Bucket&gt;</code> </li>
-</ul>
-</li>
-<li>关于对象存储绑定域名：<ul>
-<li>要访问存储资源，可以绑定CDN加速域名或者源站域名</li>
-<li>源站域名是直接访问存储源站（也就是Bucket）的，会产生外网流量，没有加速效果</li>
-<li>CDN加速域名会利用边缘结点缓存加速，产生CDN流量和回源流量（没有缓存的话回源存储对应产生回源流量）</li>
-<li>CDN加速域名绑定时存储源站可以选择对象存储（Bucket）（也就是在一个Bucket下绑定域名时的唯一选择），也可以选择自己的服务器（在CDN服务➡域名管理➡回源配置中有更多选项）</li>
-</ul>
-</li>
-</ul>
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>上传图片策略依托的是第三方工具或者脚本，这里考虑用脚本实现，即选择<em>Custom Command</em>，然后输入相应命令</p>
-<p><strong>脚本规则：</strong>会把N个图片路径跟在所指定的命令后面，要求执行命令时标准输出的最后N行是上传后的图片链接</p>
-<p>在win环境下为了方便（写shell脚本并且使用windows路径），我的方法是，下载win下的<a target="_blank" rel="noopener" href="https://github.com/qiniu/qshell">qshell</a>，依托wsl2执行shell脚本，shell脚本再调用qshell.exe执行上传或抓取操作</p>
-<h3 id="Shell-Script"><a href="#Shell-Script" class="headerlink" title="Shell Script"></a>Shell Script</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">set -e</span><br><span class="line"></span><br><span class="line">BUCKET=&quot;blog&quot;</span><br><span class="line">QSHELL=&quot;qshell.exe&quot;</span><br><span class="line">DOMAIN=&quot;http://img.srouce_domain&quot;</span><br><span class="line"></span><br><span class="line">i=0</span><br><span class="line"></span><br><span class="line">for filepath in $&#123;@&#125;; do</span><br><span class="line">	i=$(($&#123;i&#125;+1))</span><br><span class="line">	date=$(date +&#x27;%Y%m%d-%H%M%S&#x27;)</span><br><span class="line"><span class="meta">	</span></span><br><span class="line"><span class="meta">	#</span><span class="bash"> 如果路径中没/就找\</span></span><br><span class="line"><span class="bash">	<span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$&#123;filepath&#125;</span>&quot;</span> == <span class="string">&quot;<span class="variable">$&#123;filepath##*/&#125;</span>&quot;</span> ]; <span class="keyword">then</span></span></span><br><span class="line">		filename=&quot;$&#123;date&#125;-$&#123;filepath##*\\&#125;&quot;</span><br><span class="line">	else</span><br><span class="line">		filename=&quot;$&#123;date&#125;-$&#123;filepath##*/&#125;&quot;</span><br><span class="line">	fi</span><br><span class="line"></span><br><span class="line">    if [[ &quot;$&#123;filepath&#125;&quot; =~ ^http.* ]]; then</span><br><span class="line">    	# remote resource</span><br><span class="line">    	$&#123;QSHELL&#125; fetch &quot;$&#123;filepath&#125;&quot; $&#123;BUCKET&#125; -k &quot;$&#123;filename&#125;&quot; &gt; /dev/null</span><br><span class="line">    else</span><br><span class="line">    	# local resource</span><br><span class="line">    	$&#123;QSHELL&#125; rput $&#123;BUCKET&#125; &quot;$&#123;filename&#125;&quot; &quot;$&#123;filepath&#125;&quot; &gt; /dev/null</span><br><span class="line">    fi</span><br><span class="line">    </span><br><span class="line">    if [ $? -eq 0 ]; then</span><br><span class="line">    	if [ $&#123;i&#125; -eq 1 ]; then</span><br><span class="line">    	echo &quot;Upload Success:&quot;</span><br><span class="line">    	fi</span><br><span class="line">    	echo &quot;$&#123;DOMAIN&#125;/$&#123;filename&#125;&quot;</span><br><span class="line">    else</span><br><span class="line">    	echo &quot;Upload $&#123;filepath&#125; Failed!&quot;</span><br><span class="line">    	exit 1;</span><br><span class="line">    fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-
-<h3 id="Preference-Panel"><a href="#Preference-Panel" class="headerlink" title="Preference Panel"></a>Preference Panel</h3><p><img src="http://img.luooofan.site/20210823-142833-image-20210821111732800.png" alt="image-20210821111732800"></p>
-<p>对于插入图片时是否上传图片可以<strong>全局设置</strong>或者<strong>单文档设置</strong></p>
-<ul>
-<li>全局设置：即将上图中的*插入图片时…*策略指定为上传图片</li>
-<li>单文档设置：<ul>
-<li>首先勾选<em>允许根据YAML设置自动上传图片</em>，然后如果在md文档开头<strong>YAML front matter</strong>中配置<code>typora-copy-images-to: upload</code>时，该文档将在插入图片时自动上传图片；不配置该行时将选择首选项中指定的策略，如上图中即为复制到指定路径。</li>
-<li>也可以通过菜单配置（menu➡Format➡Image➡When insert local image…➡Upload Image）。</li>
-</ul>
-</li>
-</ul>
-<p>具体选择什么样的策略根据个人情况来定。</p>
-<h2 id="Knowledge"><a href="#Knowledge" class="headerlink" title="Knowledge"></a>Knowledge</h2><h3 id="CDN（Content-Delivery-Network）内容分发网络"><a href="#CDN（Content-Delivery-Network）内容分发网络" class="headerlink" title="CDN（Content Delivery Network）内容分发网络"></a>CDN（Content Delivery Network）内容分发网络</h3><p>CDN的出现是为了改善现有网络服务质量，它是构建在现有网络基础之上的智能虚拟网络，把内容缓存在终端用户附近，一个通俗<strong>粗略</strong>的理解是：</p>
-<ul>
-<li><p>原来通过一个域名访问网站，先通过DNS服务器（并不限制为1台或1个集群）找到目标IP地址，然后与目标IP通信。</p>
-</li>
-<li><p>DNS解析里可以配置A记录，也可以配置CNAME记录，A记录解析为目标IP，CNAME记录解析为另外一个域名。</p>
-</li>
-<li><p>现在加了CDN，把域名交给DNS服务器之后，找到CNAME记录解析到一个CDN专用DNS服务器，最终会返回一个CDN全局负载均衡设备IP给用户，用户与该设备通信，该设备通过一系列操作能获得一个计算得到的较优的目标IP，并返回给用户，用户最终与返回的这个目标IP通信。</p>
-</li>
-</ul>
-<p>使用 CDN 服务的网站，只需将其域名解析权交给 CDN 的全局负载均衡（GSLB）设备，将需要分发的内容注入CDN，就可以实现内容加速了。</p>
-<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><p>字符串截取：</p>
-<ul>
-<li>指定位置和长度：<code>$&#123;str:[0-]start[:length]&#125;</code> <ul>
-<li>加上 <strong>0-</strong> 是从右边从1开始计数，不加是从左边从0开始计数</li>
-<li>不加长度默认截取到字符串末尾</li>
-</ul>
-</li>
-<li>指定字符（子字符串）开始截取：<code>$&#123;str#pattern&#125;</code><ul>
-<li><strong>pattern</strong>是匹配的模式，可以用 ***** 通配符</li>
-<li><strong>#</strong> 表示从左往右找到第一个匹配的，然后截取匹配字符串右边的所有字符</li>
-<li><strong>##</strong> 表示从左往右找到最后一个匹配的，然后截取匹配字符串右边的所有字符</li>
-<li><strong>%</strong> 表示从右往左找到第一个匹配的，然后截取匹配字符串左边的所有字符</li>
-<li><strong>%%</strong> 表示从右往左找到最后一个匹配的，然后截取匹配字符串左边的所有字符</li>
-<li>如果 ***** 位置没放对（按理应该返回空）或者没找到匹配字符串的话都会返回<strong>整个str</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://support.typora.io/Upload-Image/">official documentation</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/qiniu/qshell">qshell</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/interop">Windows 与 Linux 的互操作性</a></li>
-<li><a target="_blank" rel="noopener" href="https://razeencheng.com/post/typora-upload-image-qiniu.html">Typora 自动上传图片到七牛云</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ssgeek/p/10854839.html">七牛云图床和Markdown使用</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/338951935">到底什么是CDN？</a></li>
-<li><a target="_blank" rel="noopener" href="https://developer.qiniu.com/fusion/kb/4064/understanding-and-setting-up-the-way-back-to-the-source-host">CDN 回源配置相关问题</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
       }
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('http://img.luooofan.site/A-Lonely-Dog_src_ibb.co_3N4MLVJ.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">luooofan</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">luooofan</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/luooofan" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:luooofan@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/08/23/Typora%E9%85%8D%E7%BD%AE%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%9B%BE%E5%BA%8A/" title="Typora配置上传脚本使用七牛云图床">     <img class="post_bg" src="http://img.luooofan.site/A-Lonely-Dog_src_ibb.co_3N4MLVJ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Typora配置上传脚本使用七牛云图床"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/08/23/Typora%E9%85%8D%E7%BD%AE%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%9B%BE%E5%BA%8A/" title="Typora配置上传脚本使用七牛云图床">Typora配置上传脚本使用七牛云图床</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-23T06:26:23.382Z" title="发表于 2021-08-23 14:26:23">2021-08-23</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-26T13:46:28.603Z" title="更新于 2021-08-26 21:46:28">2021-08-26</time></span></div><div class="content">Typora配置上传脚本使用七牛云图床Abstract利用Typora提供的上传图片功能，编写shell脚本，调用七牛云提供的qshell命令行工具，在windows环境下通过wsl2运行，将markdown文档中的本地或网络图片选择性地上传到七牛云图床。
+PrerequisitesTypora Version
+​    In newer version of Typora (≥ 0.9.9.32 on macOS or 0.9.84 on Windows / Linux), we added a “upload image” function to upload images to a cloud image storage via 3rd apps or scripts.               ——official documentation
+
+七牛云
+注册登录
+控制台➡对象存储Kodo➡空间管理➡新建空间，要求名字唯一，访问控制设置为public
+配置CDN加速域名，要求必须有一个备过案的域名
+可以直接绑定原域名，也可以绑定其二级域名
+根据个人情况选择。我选择绑定了原域名的 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">luooofan</div><div class="author-info__description">luooofan's blog</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/luooofan" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:luooofan@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/23/Typora%E9%85%8D%E7%BD%AE%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%9B%BE%E5%BA%8A/" title="Typora配置上传脚本使用七牛云图床"><img src="http://img.luooofan.site/A-Lonely-Dog_src_ibb.co_3N4MLVJ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Typora配置上传脚本使用七牛云图床"/></a><div class="content"><a class="title" href="/2021/08/23/Typora%E9%85%8D%E7%BD%AE%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%9B%BE%E5%BA%8A/" title="Typora配置上传脚本使用七牛云图床">Typora配置上传脚本使用七牛云图床</a><time datetime="2021-08-23T06:26:23.382Z" title="发表于 2021-08-23 14:26:23">2021-08-23</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">1</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-08-26T15:13:37.511Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By luooofan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "Welcome to luooofan's blog.".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = 'W'
   }
-</script>
+}
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">luooofan</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">1</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">luooofan</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-    <span title="站点总字数">3k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="站点阅读时长">3 分钟</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-</body>
-</html>
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
