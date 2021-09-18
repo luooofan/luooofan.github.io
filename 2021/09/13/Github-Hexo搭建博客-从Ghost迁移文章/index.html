@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Github+Hexo搭建博客|从Ghost迁移文章 | luooofan</title><meta name="keywords" content="Blog,记录"><meta name="author" content="luooofan,luooofan@gmail.com"><meta name="copyright" content="luooofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="利用Github repo的Pages搭建静态博客，使用Hexo框架，并迁移原Ghost博客中的全markdown格式的文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github+Hexo搭建博客|从Ghost迁移文章">
+<meta property="og:url" content="https://www.luooofan.site/2021/09/13/Github-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BB%8EGhost%E8%BF%81%E7%A7%BB%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:site_name" content="luooofan">
+<meta property="og:description" content="利用Github repo的Pages搭建静态博客，使用Hexo框架，并迁移原Ghost博客中的全markdown格式的文章">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.luooofan.site/img/BodhiWorkHard_512x512.jpg">
+<meta property="article:published_time" content="2021-09-13T01:52:23.000Z">
+<meta property="article:modified_time" content="2021-09-18T12:58:32.752Z">
+<meta property="article:author" content="luooofan">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="记录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.luooofan.site/img/BodhiWorkHard_512x512.jpg"><link rel="shortcut icon" href="/img/BodhiWorkHard_rounding_32x32.png"><link rel="canonical" href="https://www.luooofan.site/2021/09/13/Github-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BB%8EGhost%E8%BF%81%E7%A7%BB%E6%96%87%E7%AB%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: luooofan","link":"链接: ","source":"来源: luooofan","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Github+Hexo搭建博客|从Ghost迁移文章',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-09-18 20:58:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/BodhiWorkHard_512x512.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">luooofan</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Github+Hexo搭建博客|从Ghost迁移文章</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-13T01:52:23.000Z" title="发表于 2021-09-13 09:52:23">2021-09-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-09-18T12:58:32.752Z" title="更新于 2021-09-18 20:58:32">2021-09-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">818</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Github+Hexo搭建博客|从Ghost迁移文章"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Github-Hexo搭建博客-从Ghost迁移文章"><a href="#Github-Hexo搭建博客-从Ghost迁移文章" class="headerlink" title="Github+Hexo搭建博客|从Ghost迁移文章"></a>Github+Hexo搭建博客|从Ghost迁移文章</h1><h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><h3 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h3><ol>
+<li>本地找一个文件夹，以后博客相关的文件都放在里面就行</li>
+<li>安装<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>，熟悉常用命令</li>
+<li>修改配置文件<code>_config.yml</code></li>
+<li>GitHub配置SSH Key，创建个人仓库：username.github.io（仓库名）</li>
+<li>修改<code>deploy</code>配置将Hexo与Github关联起来</li>
+<li>在Github仓库设置的Pages里自定义域名，去域名服务商控制台添加解析记录</li>
+<li>更换主题，修改配置</li>
+</ol>
+<h3 id="好看主题"><a href="#好看主题" class="headerlink" title="好看主题"></a>好看主题</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/shen-yu/hexo-theme-ayer">hexo-theme-ayer</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">hexo-theme-next</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">hexo-theme-butterfly</a></li>
+</ul>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><ul>
+<li>如果打算使用图床、配置CDN的话需要用HTTPS协议，如果使用HTTP的话会无法访问图片（受限于浏览器，考虑到安全性）</li>
+<li>部署可以配置使用ssh协议，需要配置ssh key，这样在<code>hexo d</code>的时候可以不用输用户名和密码</li>
+<li>可以多端部署，域名解析时可以分国内外流量</li>
+<li>在该Github repo下可以新设一个分支来用Pages，再设一个分支用来备份博客</li>
+</ul>
+<h2 id="从GHOST迁移"><a href="#从GHOST迁移" class="headerlink" title="从GHOST迁移"></a>从GHOST迁移</h2><p>首先要从ghost后台管理页面里 Labs➡Migration Options➡Export your content 导出全部文章和设置信息，是一份json文件。</p>
+<p>这份json文件其实就已经包括了我们所需要的全部信息了，可以直接写脚本提取文章，不过在此之前我们可以先看看它到底包括了哪些信息。</p>
+<ul>
+<li><p>连接mysql数据库：<code>mysql -uroot -p</code></p>
+</li>
+<li><p>切换到ghost database并查看有哪些表：<code>use ghost; show tables;</code></p>
+<img src="http://img.luooofan.site/20210918-180128-image-20210918165046323.png" alt="image-20210918165046323" style="zoom: 67%;" /></li>
+<li><p>其中文章信息就在<strong>posts</strong>表中，查看其表项：<code>desc posts;</code></p>
+<img src="http://img.luooofan.site/20210918-180134-image-20210918165341540.png" alt="image-20210918165341540" style="zoom:67%;" /></li>
+<li><p>再来看导出的这份json文件，其实就是把ghost数据库里的内容都导出来了</p>
+<img src="https://img.luooofan.site/20210918-180139-image-20210918173007981.png" alt="image-20210918173007981" style="zoom:67%;" /></li>
+<li><p>posts表中的mobiledoc字段保留了原始的markdown文本</p>
+</li>
+<li><p>提取代码如下：</p>
+<p><strong>NOTE：脚本只提取Markdown Card，其他类型的Card需要自行实现</strong></p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;./luooofans-blog.ghost.2021-08-29-13-36-39.json&quot;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">json_obj = json.load(f) <span class="comment"># dict: &#123;&#x27;db&#x27;: db_obj(list)&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># get ghost database</span></span><br><span class="line">tables = json_obj[<span class="string">&#x27;db&#x27;</span>][<span class="number">0</span>][<span class="string">&#x27;data&#x27;</span>] <span class="comment"># dict(key:table_name(str), value:table_data(list))</span></span><br><span class="line"><span class="comment"># get table: posts</span></span><br><span class="line">posts = tables[<span class="string">&#x27;posts&#x27;</span>]</span><br><span class="line"><span class="comment"># post num: len(posts)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># key columns for me: title, mobiledoc(include markdown-style text), published_at</span></span><br><span class="line"><span class="keyword">for</span> post <span class="keyword">in</span> posts:</span><br><span class="line">    title = post[<span class="string">&quot;title&quot;</span>]</span><br><span class="line">    published_at = post[<span class="string">&quot;published_at&quot;</span>]</span><br><span class="line">    mobiledoc = post[<span class="string">&quot;mobiledoc&quot;</span>] <span class="comment"># str</span></span><br><span class="line">    cards = json.loads(mobiledoc)[<span class="string">&quot;cards&quot;</span>] <span class="comment"># list</span></span><br><span class="line">    <span class="comment"># only process markdown-type card</span></span><br><span class="line">    mdobj = json.loads(mobiledoc)[<span class="string">&#x27;cards&#x27;</span>] </span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./ghost_md_files/&#x27;</span>+title+<span class="string">&#x27;.md&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> output:</span><br><span class="line">        output.write(<span class="string">&quot;---\n&quot;</span>)</span><br><span class="line">        output.write(<span class="string">&quot;title: &quot;</span>+title+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        output.write(<span class="string">&quot;date: &quot;</span>+published_at[<span class="number">0</span>:<span class="number">10</span>]+<span class="string">&#x27; &#x27;</span>+published_at[<span class="number">11</span>:-<span class="number">5</span>]+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        output.write(<span class="string">&quot;categories: &quot;</span>+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        output.write(<span class="string">&quot;tags: &quot;</span>+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        output.write(<span class="string">&quot;description: &quot;</span>+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        output.write(<span class="string">&quot;keywords: &quot;</span>+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        output.write(<span class="string">&quot;---\n&quot;</span>)</span><br><span class="line">        output.write(<span class="string">&quot;# &quot;</span>+title+<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> card <span class="keyword">in</span> cards:</span><br><span class="line">            <span class="keyword">if</span> card[<span class="number">0</span>]==<span class="string">&quot;markdown&quot;</span>:</span><br><span class="line">                output.write(card[<span class="number">1</span>][<span class="string">&#x27;markdown&#x27;</span>])</span><br><span class="line">                output.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<p>提取出原始的md文件之后，放到hexo blog下source里的<code>_posts</code>里然后cmd里<code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server</code>就行了</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo 搭建个人网站详细教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000038619366">Hexo+Github轻松搭建个人博客</a></li>
+<li><a target="_blank" rel="noopener" href="http://imbajin.com/2016-10-06-Hexo%E6%8A%80%E5%B7%A7%E5%92%8C%E7%BB%8F%E9%AA%8C%E4%B8%80/">Hexo技巧与经验之升级(一)</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43740362/article/details/113790851">Hexo之更换背景及透明度</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.haoyizebo.com/posts/710984d0/">解决 Hexo 在使用 Node.js 14 时的 Accessing non-existent property ‘xxx’ of module exports inside circular dependency 问题</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6873285689232850952">为什么http的内容不能在https内使用？</a></li>
+<li><a target="_blank" rel="noopener" href="https://lrscy.github.io/2018/01/26/Hexo-Github-Backup/">在Github上备份Hexo博客</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:luooofan@gmail.com">luooofan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.luooofan.site/2021/09/13/Github-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BB%8EGhost%E8%BF%81%E7%A7%BB%E6%96%87%E7%AB%A0/">https://www.luooofan.site/2021/09/13/Github-Hexo搭建博客-从Ghost迁移文章/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.luooofan.site" target="_blank">luooofan</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Blog/">Blog</a><a class="post-meta__tags" href="/tags/%E8%AE%B0%E5%BD%95/">记录</a></div><div class="post_share"><div class="social-share" data-image="/img/BodhiWorkHard_512x512.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/09/18/Typora%E9%85%8D%E7%BD%AE%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E4%BA%91%E5%9B%BE%E5%BA%8A/"><img class="prev-cover" src="/transparent" onerror="onerror=null;src='/img/black.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Typora配置上传脚本使用七牛云图床</div></div></a></div><div class="next-post pull-right"><a href="/2021/07/04/win%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E8%AE%BF%E9%97%AEwsl2%20docker%E5%AE%B9%E5%99%A8%E4%B8%AD%E7%9A%84ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/"><img class="next-cover" src="/transparent" onerror="onerror=null;src='/img/black.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">win局域网内访问wsl2 docker容器中的ftp服务器</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Github-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2-%E4%BB%8EGhost%E8%BF%81%E7%A7%BB%E6%96%87%E7%AB%A0"><span class="toc-number">1.</span> <span class="toc-text">Github+Hexo搭建博客|从Ghost迁移文章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.1.</span> <span class="toc-text">搭建博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.1.</span> <span class="toc-text">搭建步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%BD%E7%9C%8B%E4%B8%BB%E9%A2%98"><span class="toc-number">1.1.2.</span> <span class="toc-text">好看主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tips"><span class="toc-number">1.1.3.</span> <span class="toc-text">Tips</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8EGHOST%E8%BF%81%E7%A7%BB"><span class="toc-number">1.2.</span> <span class="toc-text">从GHOST迁移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">1.3.</span> <span class="toc-text">References</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By luooofan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div><a target="_blank" href="https://beian.miit.gov.cn" style="display:inline-block;text-decoration:none;height:16px;line-height:20px;"><p style="float:left;height:20px;line-height:20px;margin:0px 0px 0px 5px; color:#939393;">晋ICP备2021007586号-1</p></a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=14072502000142" style="display:inline-block;text-decoration:none;height:16px;line-height:20px;"><img src="/img/beian.png" style="float:left;"><p style="float:left;height:20px;line-height:20px;margin:0px 0px 0px 5px; color:#939393;">晋公网安备 14072502000142号</p></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
