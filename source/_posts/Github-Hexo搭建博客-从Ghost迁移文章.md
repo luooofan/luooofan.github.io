@@ -1,12 +1,26 @@
 ---
 title: Github+Hexo搭建博客|从Ghost迁移文章
-date: 2021-09-13 09:52:23
 categories: 记录
-tags: [Blog, 记录]
+tags:
+  - Blog
+  - 记录
 description: 利用Github repo的Pages搭建静态博客，使用Hexo框架，并迁移原Ghost博客中的全markdown格式的文章
-keywords:
+comments: true
+mathjax: false
+katex: false
+aside: true
 cover: false
+date: 2021-09-13 09:52:23
+keywords:
+top_img:
+aplayer:
+highlight_shrink:
+copyright:
 ---
+
+
+
+
 
 # Github+Hexo搭建博客|从Ghost迁移文章
 
@@ -34,7 +48,7 @@ cover: false
 - 如果打算使用图床、配置CDN的话需要用HTTPS协议，如果使用HTTP的话会无法访问图片（受限于浏览器，考虑到安全性）
 - 部署可以配置使用ssh协议，需要配置ssh key，这样在`hexo d`的时候可以不用输用户名和密码
 - 可以多端部署，域名解析时可以分国内外流量
-- 在该Github repo下可以新设一个分支来用Pages，主分支可以用来保存配置文件
+- 在该Github repo下可以新设一个分支来用Pages，再设一个分支用来备份博客
 
 
 
@@ -114,3 +128,5 @@ f.close()
 - [Hexo之更换背景及透明度](https://blog.csdn.net/qq_43740362/article/details/113790851)
 - [解决 Hexo 在使用 Node.js 14 时的 Accessing non-existent property 'xxx' of module exports inside circular dependency 问题](https://www.haoyizebo.com/posts/710984d0/)
 - [为什么http的内容不能在https内使用？](https://juejin.cn/post/6873285689232850952)
+- [在Github上备份Hexo博客](https://lrscy.github.io/2018/01/26/Hexo-Github-Backup/)
+
