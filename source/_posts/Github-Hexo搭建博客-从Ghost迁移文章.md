@@ -5,17 +5,9 @@ tags:
   - Blog
   - 记录
 description: 利用Github repo的Pages搭建静态博客，使用Hexo框架，并迁移原Ghost博客中的全markdown格式的文章
-comments: true
-mathjax: false
-katex: false
-aside: true
 cover: false
 date: 2021-09-13 09:52:23
 keywords:
-top_img:
-aplayer:
-highlight_shrink:
-copyright:
 ---
 
 

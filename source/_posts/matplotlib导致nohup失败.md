@@ -8,6 +8,7 @@ keywords:
 cover: false
 ---
 # matplotlib导致nohup失败
+
 ## Linux后台运行命令
 一些基本的操作参见[linux 下后台运行python脚本](https://www.jianshu.com/p/4041c4e6e1b0)
 主要就是命令后加 **&** ,以及一个`nuhup`命令
