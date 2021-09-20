@@ -52,6 +52,8 @@ cover: false
 
 一般apt install不成功先更新一下然后重新install：`sudo apt-get update`
 
+安装的时候如果指定了版本，运行的时候也要加上版本：`clang-10 clang++-10`
+
 有时候需要换源或者补充源：`sudo vim /etc/apt/sources.list`
 
 可以用apt搜索要安装的包：`sudo apt search clang`
@@ -65,3 +67,4 @@ cover: false
 - [llvm apt sources](https://github.com/actions/virtual-environments/issues/104#issuecomment-555806825)
 
 - [Unmet dependencies. Libc6 The package system is broken](https://askubuntu.com/questions/1315906/unmet-dependencies-libc6-the-package-system-is-broken)
+
