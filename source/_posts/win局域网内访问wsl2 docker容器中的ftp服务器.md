@@ -221,3 +221,4 @@ curl命令如下：
 [树莓派连接WIFI无线网络配置](https://segmentfault.com/a/1190000017457004)
 [Raspbian 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/raspbian/)
 [How to Fix “W: Some index files failed to download.” Error In Ubuntu](https://www.tecmint.com/some-index-files-failed-to-download/)
+
