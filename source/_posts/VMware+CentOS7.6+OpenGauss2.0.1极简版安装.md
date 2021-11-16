@@ -13,7 +13,7 @@ cover: false
 
 Arch：x86-64
 
-OS：Win11 22458.1000
+OS：Win11
 
 VMware：16.1.2
 
