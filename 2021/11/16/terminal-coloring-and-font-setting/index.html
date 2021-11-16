@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>终端颜色和字体设置 | luooofan</title><meta name="keywords" content="记录,Linux,Server,Vim"><meta name="author" content="luooofan,luooofan@gmail.com"><meta name="copyright" content="luooofan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="256色终端、真彩色终端的设置，tmux和vim开启true-color支持，vim光标的一些问题以及选用的编程字体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="终端颜色和字体设置">
+<meta property="og:url" content="https://www.luooofan.site/2021/11/16/terminal-coloring-and-font-setting/index.html">
+<meta property="og:site_name" content="luooofan">
+<meta property="og:description" content="256色终端、真彩色终端的设置，tmux和vim开启true-color支持，vim光标的一些问题以及选用的编程字体">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.luooofan.site/img/BodhiWorkHard_512x512.jpg">
+<meta property="article:published_time" content="2021-11-16T06:08:20.000Z">
+<meta property="article:modified_time" content="2021-11-16T13:08:56.713Z">
+<meta property="article:author" content="luooofan">
+<meta property="article:tag" content="记录">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Server">
+<meta property="article:tag" content="Vim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.luooofan.site/img/BodhiWorkHard_512x512.jpg"><link rel="shortcut icon" href="/img/BodhiWorkHard_rounding_32x32.png"><link rel="canonical" href="https://www.luooofan.site/2021/11/16/terminal-coloring-and-font-setting/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: luooofan","link":"链接: ","source":"来源: luooofan","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '终端颜色和字体设置',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-16 21:08:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/BodhiWorkHard_512x512.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">luooofan</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">终端颜色和字体设置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-16T06:08:20.000Z" title="发表于 2021-11-16 14:08:20">2021-11-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-16T13:08:56.713Z" title="更新于 2021-11-16 21:08:56">2021-11-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Server/">Server</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Server/%E8%AE%B0%E5%BD%95/">记录</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="终端颜色和字体设置"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="从改变终端输出文本的颜色说起"><a href="#从改变终端输出文本的颜色说起" class="headerlink" title="从改变终端输出文本的颜色说起"></a>从改变终端输出文本的颜色说起</h2><p>参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/opangle/p/4082692.html">控制台终端输出颜色</a>，<a target="_blank" rel="noopener" href="https://c1ino.github.io/c1ino/2019/08-03-colored-echo-in-win10-command-prompt">使用 Win10 命令提示符自带命令实现彩色输出</a></p>
+<p>当我们想改变输出到控制台终端的文本的颜色时，可以这样：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\033[31mRed Text\033[0m&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\033[32mGreen Text\033[0m&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\033[33mYellow Text\033[0m&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\033[34mBlue Text\033[0m&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\033[35mMagenta Text\033[0m&quot;</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\033[36mCyan Text\033[0m&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.luooofan.site/20211116-210854-image-20211116160551691.png" alt="image-20211116160551691"></p>
+<p>其中：<code>\033[31m</code>、<code>\033[31m</code>、<code>\033[0m</code>等是 <strong>ANSI转义序列</strong>（ANSI escape code/sequence），它控制文本输出的格式、颜色等。</p>
+<p>NOTE: <code>\033</code>是键盘左上角 ESC 键对应的 ASCII 码（8进制），<code>\033</code>、<code>\x1b</code>和<code>\e</code>还有<code>^[</code>效果一样</p>
+<p>参考<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Escape_character#ASCII_escape_character">ASCII_escape_character</a>，<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/31304939/how-do-i-pass-esc-to-stdin">How do I pass ESC to stdin?</a>，<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44901564/article/details/102738916">shell脚本中键盘上下左右和ESC键的控制</a></p>
+<h2 id="ANSI转义序列"><a href="#ANSI转义序列" class="headerlink" title="ANSI转义序列"></a><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/ANSI_escape_code">ANSI转义序列</a></h2><p>前面提到了 ANSI 转义序列，并且提到它不仅仅能控制文本颜色，还能控制格式等</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;\033[3mitalic\033[23m&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.luooofan.site/20211116-210855-image-20211116161320160.png" alt="image-20211116161320160"></p>
+<p>事实上，<code>\033[nm</code>也只是 ANSI 转义码中的一种格式，可以在<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/ANSI_escape_code">wiki: ANSI_escape_code</a>看到更多的转义码</p>
+<p>其他参考<a target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man4/console_codes.4.html">console_codes(4) — Linux manual page</a>，<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences">Console Virtual Terminal Sequences</a></p>
+<h2 id="终端颜色"><a href="#终端颜色" class="headerlink" title="终端颜色"></a>终端颜色</h2><p>可以先看一下这篇<a target="_blank" rel="noopener" href="https://gist.github.com/XVilka/8346728">TrueColor</a></p>
+<p>默认配置下应该 256 色终端类型较多，不过我们更期望 24bit 真彩色（true color）的终端</p>
+<p>相关的几个Linux环境变量：<code>$TERM</code>，<code>$COLORTERM</code></p>
+<p>Linux有一个<code>terminfo</code>数据库，结合<code>tput</code>命令可以看到支持的终端类型及其颜色种类：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> T <span class="keyword">in</span> `find /usr/share/terminfo -<span class="built_in">type</span> f -<span class="built_in">printf</span> <span class="string">&#x27;%f &#x27;</span>`;<span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$T</span> `tput -T <span class="variable">$T</span> colors`&quot;</span>;<span class="keyword">done</span>| sort -nk2 | tail -n20</span><br></pre></td></tr></table></figure>
+
+<p>如果<code>echo $TERM</code>发现只是<code>xterm</code>的话，默认是8色的，可以用<code>tput colors</code>验证</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置为256色</span></span><br><span class="line"><span class="built_in">export</span> TERM=xterm-256color</span><br><span class="line"><span class="comment"># 配置支持true color</span></span><br><span class="line"><span class="built_in">export</span> COLORTERM=truecolor</span><br></pre></td></tr></table></figure>
+
+<p>验证终端是否支持真彩色的一种方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;BEGIN&#123;</span></span><br><span class="line"><span class="string">    s=&quot;/\\/\\/\\/\\/\\&quot;; s=s s s s s s s s;</span></span><br><span class="line"><span class="string">    for (colnum = 0; colnum&lt;77; colnum++) &#123;</span></span><br><span class="line"><span class="string">        r = 255-(colnum*255/76);</span></span><br><span class="line"><span class="string">        g = (colnum*510/76);</span></span><br><span class="line"><span class="string">        b = (colnum*255/76);</span></span><br><span class="line"><span class="string">        if (g&gt;255) g = 510-g;</span></span><br><span class="line"><span class="string">        printf &quot;\033[48;2;%d;%d;%dm&quot;, r,g,b;</span></span><br><span class="line"><span class="string">        printf &quot;\033[38;2;%d;%d;%dm&quot;, 255-r,255-g,255-b;</span></span><br><span class="line"><span class="string">        printf &quot;%s\033[0m&quot;, substr(s,colnum+1,1);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    printf &quot;\n&quot;;</span></span><br><span class="line"><span class="string">&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>若支持，如下图，不支持的话则是断断续续的</p>
+<p><img src="http://img.luooofan.site/20211116-210856-image-20211116163135753.png" alt="image-20211116163135753"></p>
+<p>参考<a target="_blank" rel="noopener" href="https://gaomf.cn/2017/01/16/Terminal_Color/">判断终端色彩支持情况的方法</a>，<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1309068/zsh-true-color-disabled-on-wsl2">zsh true color disabled on WSL2?</a>，<a target="_blank" rel="noopener" href="https://www.gnu.org/software/gettext/libtextstyle/manual/html_node/Terminal-emulators.html">2.1.1 Terminal emulator programs</a>，<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Color_output_in_console">Color output in console</a></p>
+<h2 id="为tmux和vim开启true-color支持"><a href="#为tmux和vim开启true-color支持" class="headerlink" title="为tmux和vim开启true-color支持"></a>为tmux和vim开启true-color支持</h2><h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h3><p><code>vim &gt;= 7.4.1770</code> 及 <code>neovim &gt;= 0.2.2</code> 都支持真彩色</p>
+<p><code>:help xterm-true-color</code></p>
+<p>修改配置文件<code>~/.vimrc</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> has(<span class="string">&quot;termguicolors&quot;</span>)</span><br><span class="line">    <span class="string">&quot; fix bug for vim</span></span><br><span class="line"><span class="string">    set t_8f=^[[38;2;%lu;%lu;%lum</span></span><br><span class="line"><span class="string">    set t_8b=^[[48;2;%lu;%lu;%lum</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &quot;</span> <span class="built_in">enable</span> <span class="literal">true</span> color</span><br><span class="line">    <span class="built_in">set</span> termguicolors</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+
+<p><strong>NOTE</strong>：<code>^[</code> 这里是单个 ESC 键，可以先按 <code>Ctrl-V</code> 再按 <code>ESC</code> 键键入</p>
+<p>配置完后可以重新打开vim，<code>:terminal</code> 打开终端，测试 true-color</p>
+<h3 id="Tmux"><a href="#Tmux" class="headerlink" title="Tmux"></a>Tmux</h3><p>修改配置文件<code>~/.tmux.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> -g default-terminal <span class="string">&quot;tmux-256color&quot;</span></span><br><span class="line">set-option -ga terminal-overrides <span class="string">&quot;,*256col*:Tc&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>NOTE</strong>：</p>
+<ul>
+<li>Tc 即代表 true-color 支持</li>
+<li>默认终端还可以设置为<code>screen-256color</code>，但是这个终端类型不支持<strong>斜体</strong>，所以在tmux里使用vim时就会导致原本被设置为斜体的部分显示异常，可以参考<a target="_blank" rel="noopener" href="https://github.com/morhetz/gruvbox/issues/43">gruvbox：Comments looking strange withing tmux</a>，<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/293788971">在 tmux 环境中使用 tmux-256color</a>，<a target="_blank" rel="noopener" href="https://blog.csdn.net/ecnu_lzj/article/details/104455702">为tmux和vim开启斜体和真彩色</a></li>
+</ul>
+<p>配置完后退出所有的tmux，重新打开，测试 true-color 即可</p>
+<p>参考<a target="_blank" rel="noopener" href="https://ttys3.dev/post/tmux-24bit-true-color-support/">Tmux 24bit True Color Support</a>，<a target="_blank" rel="noopener" href="https://www.ogura.io/posts/2018/09/true-color-in-vim-under-tmux-on-ubuntu/">tmux 与 vim 开启 true-color 支持</a></p>
+<h2 id="编程字体"><a href="#编程字体" class="headerlink" title="编程字体"></a>编程字体</h2><p>VSCode中可以配置多种字体，Windows Terminal中目前只能配置单字体</p>
+<p>尝试了多种字体：<a target="_blank" rel="noopener" href="https://github.com/adobe-fonts/source-code-pro">Source Code Pro</a>，<a target="_blank" rel="noopener" href="https://github.com/tonsky/FiraCode">Fira Code</a>，<a target="_blank" rel="noopener" href="https://github.com/JetBrains/JetBrainsMono"> JetBrains Mono</a>，目前是选择最后一个在用</p>
+<p>中文字体尝试了：<a target="_blank" rel="noopener" href="https://github.com/adobe-fonts/source-han-sans">source-han-sans 思源黑体</a>，<a target="_blank" rel="noopener" href="https://github.com/be5invis/Sarasa-Gothic">Sarasa-Gothic 更纱黑体</a>，目前在用后者</p>
+<p>VSCode当前字体相关配置：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;editor.fontSize&quot;</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="attr">&quot;editor.lineHeight&quot;</span>: <span class="number">30</span>,</span><br><span class="line">    <span class="attr">&quot;editor.fontFamily&quot;</span>: <span class="string">&quot;&#x27;JetBrains Mono&#x27;,&#x27;Sarasa Mono SC&#x27;&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;editor.fontLigatures&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;[markdown]&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;editor.fontFamily&quot;</span>: <span class="string">&quot;&#x27;Sarasa Mono SC&#x27;&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://fonts.google.com/share?selection.family=Fira%20Code%7CInconsolata%7CJetBrains%20Mono:ital,wght@0,300;1,300%7CSource%20Code%20Pro:ital@0;1">字体分享</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.programmingfonts.org/#jetbrainsmono">一个支持多种字体多种编程语言的预览网站</a></p>
+<p><em>附几个vscode trick</em>：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43918847/article/details/111116697">修改 vscode 中主题注释中文的斜体格式</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/44219768/disable-italic-syntax-highlighting-in-vs-code">Disable italic syntax highlighting in VS Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.lrtfm.com/2020/05/2020-05-07-vscode-zh-font/">VS Code 中英文字体对齐</a></li>
+<li><a target="_blank" rel="noopener" href="https://moe.best/gotagota/vscode-monospaced.html">VSCode 等宽字体之坑</a></li>
+</ul>
+<h2 id="Vim光标"><a href="#Vim光标" class="headerlink" title="Vim光标"></a>Vim光标</h2><p>在gvim下选用gruvbox主题时光标表现良好</p>
+<p>先附上相关的帮助文档</p>
+<p><code>:help termcap-cursor-color</code></p>
+<p><a target="_blank" rel="noopener" href="https://yianwillis.github.io/vimcdoc/doc/term.html#builtin-terms">Vim中文文档：term.txt</a></p>
+<h3 id="问题一：WT内使用Vim时光标样式不同模式下无差别"><a href="#问题一：WT内使用Vim时光标样式不同模式下无差别" class="headerlink" title="问题一：WT内使用Vim时光标样式不同模式下无差别"></a>问题一：WT内使用Vim时光标样式不同模式下无差别</h3><p>Solved Issue：<a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal/issues/4335">Vim cursor can’t be changed</a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot; modify the cursor style in wsl</span></span><br><span class="line"><span class="string">&quot;</span> LINK: https:<span class="comment">//github.com/microsoft/terminal/issues/4335</span></span><br><span class="line"><span class="string">&quot; NOTE: 0 doesn&#x27;t work. 1 works well.</span></span><br><span class="line"><span class="string">if &amp;term =~ &#x27;^xterm&#x27;</span></span><br><span class="line"><span class="string">  &quot;</span> enter vim</span><br><span class="line">  autocmd VimEnter * silent !echo -ne <span class="string">&quot;\e[1 q&quot;</span></span><br><span class="line">  <span class="string">&quot; oherwise</span></span><br><span class="line"><span class="string">  let &amp;t_EI .= &quot;</span>\&lt;Esc&gt;[<span class="number">1</span> q<span class="string">&quot;</span></span><br><span class="line"><span class="string">  &quot;</span> let &amp;t_EI .= <span class="string">&quot;\&lt;Esc&gt;]12;blue\x7&quot;</span></span><br><span class="line">  <span class="string">&quot; blue can also: rgb:xx/xx/xx</span></span><br><span class="line"><span class="string">  &quot;</span> insert mode</span><br><span class="line">  let &amp;t_SI .= <span class="string">&quot;\&lt;Esc&gt;[5 q&quot;</span></span><br><span class="line">  <span class="string">&quot; 1 or 0 -&gt; blinking block</span></span><br><span class="line"><span class="string">  &quot;</span> <span class="number">2</span> -&gt; solid block</span><br><span class="line">  <span class="string">&quot; 3 -&gt; blinking underscore</span></span><br><span class="line"><span class="string">  &quot;</span> <span class="number">4</span> -&gt; solid underscore</span><br><span class="line">  <span class="string">&quot; Recent versions of xterm (282 or above) also support</span></span><br><span class="line"><span class="string">  &quot;</span> <span class="number">5</span> -&gt; blinking vertical bar</span><br><span class="line">  <span class="string">&quot; 6 -&gt; solid vertical bar</span></span><br><span class="line"><span class="string">  &quot;</span> leave vim</span><br><span class="line">  autocmd VimLeave * silent !echo -ne <span class="string">&quot;\e[5 q&quot;</span></span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="问题二：tmux内光标样式显示不正确"><a href="#问题二：tmux内光标样式显示不正确" class="headerlink" title="问题二：tmux内光标样式显示不正确"></a>问题二：tmux内光标样式显示不正确</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot; tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence                               if exists(&#x27;$TMUX&#x27;)</span></span><br><span class="line"><span class="string">   &quot;</span> <span class="built_in">set</span> insert mode to a cyan vertical line</span><br><span class="line">   let &amp;t_SI .= <span class="string">&quot;\&lt;esc&gt;Ptmux;\&lt;esc&gt;\&lt;esc&gt;[6 q\&lt;esc&gt;\\&quot;</span></span><br><span class="line">   <span class="string">&quot; let &amp;t_SI .= &quot;</span>\&lt;esc&gt;Ptmux;\&lt;esc&gt;\&lt;esc&gt;]<span class="number">12</span>;cyan\x7\&lt;esc&gt;\\<span class="string">&quot;</span></span><br><span class="line"><span class="string">   &quot;</span> <span class="built_in">set</span> normal mode to a green block</span><br><span class="line">   let &amp;t_EI .= <span class="string">&quot;\&lt;esc&gt;Ptmux;\&lt;esc&gt;\&lt;esc&gt;[2 q\&lt;esc&gt;\\&quot;</span></span><br><span class="line">   <span class="string">&quot; let &amp;t_EI .= &quot;</span>\&lt;esc&gt;Ptmux;\&lt;esc&gt;\&lt;esc&gt;]<span class="number">12</span>;green\x7\&lt;esc&gt;\\<span class="string">&quot;</span></span><br><span class="line"><span class="string">   &quot;</span> <span class="built_in">set</span> replace mode to an orange underscore</span><br><span class="line">   let &amp;t_SR .= <span class="string">&quot;\&lt;esc&gt;Ptmux;\&lt;esc&gt;\&lt;esc&gt;[4 q\&lt;esc&gt;\\&quot;</span></span><br><span class="line">   <span class="string">&quot; let &amp;t_SR .= &quot;</span>\&lt;esc&gt;Ptmux;\&lt;esc&gt;\&lt;esc&gt;]<span class="number">12</span>;orange\x7\&lt;esc&gt;\\<span class="string">&quot;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   &quot;</span> initialize cursor shape/<span class="function">color on <span class="title">startup</span> <span class="params">(silent !echo approach doesn<span class="string">&#x27;t seem to work for tmux)</span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function">   augroup ResetCursorShape</span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function">      au!</span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function">      &quot;autocmd VimEnter * startinsert | stopinsert</span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function">      autocmd VimEnter * normal! :startinsert :stopinsert</span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function">      &quot;autocmd VimEnter * :normal :startinsert :stopinsert</span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function">   augroup END</span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function"></span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function">   &quot; reset cursor when leaving tmux</span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function">   autocmd VimLeave * silent !echo -ne &quot;\033Ptmux;\033\033[2 q\033\\&quot;</span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function">   autocmd VimLeave * silent !echo -ne &quot;\033Ptmux;\033\033]12;gray\007\033\\&quot;</span></span></span></span><br><span class="line"><span class="string"><span class="params"><span class="function">endif</span></span></span></span><br></pre></td></tr></table></figure>
+
+<p>参考<a target="_blank" rel="noopener" href="https://vim.fandom.com/wiki/Configuring_the_cursor">Configuring the cursor</a></p>
+<h3 id="问题三：使用Vim时光标颜色显示不理想"><a href="#问题三：使用Vim时光标颜色显示不理想" class="headerlink" title="问题三：使用Vim时光标颜色显示不理想"></a>问题三：使用Vim时光标颜色显示不理想</h3><p>**NOTE!!!**：在终端内使用vim的话不要试图使用<code>:hi Cursor</code>来更改光标格式</p>
+<p><a target="_blank" rel="noopener" href="https://vi.stackexchange.com/questions/7176/why-is-highlight-cursor-ignored">Why is :highlight Cursor … ignored?</a></p>
+<blockquote>
+<p>Playing with the <code>Cursor</code> highlight group is a waste of time because the cursor color is handled by your terminal emulator, not by Vim.</p>
+</blockquote>
+<p>因为光标颜色是由终端模拟器而不是Vim来处理的</p>
+<p>Vim可以设置一些终端选项来处理光标颜色：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/14920634/cursor-color-in-xterm-change-accordingly-to-the-syntax-in-vim">Cursor color in xterm; change accordingly to the syntax in vim</a>，其实和前面改光标样式一样</p>
+<p>然后WT虽然在这方面做了一些工作但还没有达到理想：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal/blob/24781bc6ddec86b18c2ee6225e2bbc1cd9c55fac/doc/specs/%231203%20-%20Cursor%20Text%20Color.md">Cursor Text Foreground Color</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal/issues/7118">Cannot see cursor on white background - should have an invert option</a></li>
+</ul>
+<p>参考<a target="_blank" rel="noopener" href="https://www.starky.ltd/2021/06/08/change-vim-cursor-shape-and-color-in-xterm-or-windows-terminal/">Vim 配置光标形状和颜色（Windows Terminal、xterm）</a>，<a target="_blank" rel="noopener" href="https://www.littlezhang.com/2020/11/vim-tips%E8%AE%BE%E7%BD%AEwindows-terminal%E5%86%85vim%E7%9A%84%E5%85%89%E6%A0%87/">[Vim Tips]设置Windows Terminal内vim的光标</a>，<a target="_blank" rel="noopener" href="https://vi.stackexchange.com/questions/21546/is-it-possible-to-reverse-an-existing-highlighting-group">Is it possible to reverse an existing highlighting group?</a>，<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/50200924/how-can-i-change-cursor-color-in-vscode">How can I change cursor color in VSCode?</a>，<a target="_blank" rel="noopener" href="https://dev.to/mkuts12/better-understanding-of-vim-colors-5e81">Better Understanding of Vim colors</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:luooofan@gmail.com">luooofan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.luooofan.site/2021/11/16/terminal-coloring-and-font-setting/">https://www.luooofan.site/2021/11/16/terminal-coloring-and-font-setting/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.luooofan.site" target="_blank">luooofan</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%B0%E5%BD%95/">记录</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/Server/">Server</a><a class="post-meta__tags" href="/tags/Vim/">Vim</a></div><div class="post_share"><div class="social-share" data-image="/img/BodhiWorkHard_512x512.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/10/18/markdown-to-ppt/"><img class="next-cover" src="/transparent" onerror="onerror=null;src='/img/black.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">用Markdown写PPT</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E6%94%B9%E5%8F%98%E7%BB%88%E7%AB%AF%E8%BE%93%E5%87%BA%E6%96%87%E6%9C%AC%E7%9A%84%E9%A2%9C%E8%89%B2%E8%AF%B4%E8%B5%B7"><span class="toc-number">1.</span> <span class="toc-text">从改变终端输出文本的颜色说起</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ANSI%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97"><span class="toc-number">2.</span> <span class="toc-text">ANSI转义序列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E9%A2%9C%E8%89%B2"><span class="toc-number">3.</span> <span class="toc-text">终端颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BAtmux%E5%92%8Cvim%E5%BC%80%E5%90%AFtrue-color%E6%94%AF%E6%8C%81"><span class="toc-number">4.</span> <span class="toc-text">为tmux和vim开启true-color支持</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim"><span class="toc-number">4.1.</span> <span class="toc-text">Vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tmux"><span class="toc-number">4.2.</span> <span class="toc-text">Tmux</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%AD%97%E4%BD%93"><span class="toc-number">5.</span> <span class="toc-text">编程字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vim%E5%85%89%E6%A0%87"><span class="toc-number">6.</span> <span class="toc-text">Vim光标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9AWT%E5%86%85%E4%BD%BF%E7%94%A8Vim%E6%97%B6%E5%85%89%E6%A0%87%E6%A0%B7%E5%BC%8F%E4%B8%8D%E5%90%8C%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%97%A0%E5%B7%AE%E5%88%AB"><span class="toc-number">6.1.</span> <span class="toc-text">问题一：WT内使用Vim时光标样式不同模式下无差别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C%EF%BC%9Atmux%E5%86%85%E5%85%89%E6%A0%87%E6%A0%B7%E5%BC%8F%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%AD%A3%E7%A1%AE"><span class="toc-number">6.2.</span> <span class="toc-text">问题二：tmux内光标样式显示不正确</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%89%EF%BC%9A%E4%BD%BF%E7%94%A8Vim%E6%97%B6%E5%85%89%E6%A0%87%E9%A2%9C%E8%89%B2%E6%98%BE%E7%A4%BA%E4%B8%8D%E7%90%86%E6%83%B3"><span class="toc-number">6.3.</span> <span class="toc-text">问题三：使用Vim时光标颜色显示不理想</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By luooofan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div><a target="_blank" href="https://beian.miit.gov.cn" style="display:inline-block;text-decoration:none;height:16px;line-height:20px;"><p style="float:left;height:20px;line-height:20px;margin:0px 0px 0px 5px; color:#939393;">晋ICP备2021007586号-1</p></a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=14072502000142" style="display:inline-block;text-decoration:none;height:16px;line-height:20px;"><img src="/img/beian.png" style="float:left;"><p style="float:left;height:20px;line-height:20px;margin:0px 0px 0px 5px; color:#939393;">晋公网安备 14072502000142号</p></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
